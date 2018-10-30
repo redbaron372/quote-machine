@@ -1,5 +1,8 @@
 import React from 'react';
 import Button from '@material-ui/core/Button';
+import ShareIcon from '@material-ui/icons/Share';
+import AutorenewIcon from '@material-ui/icons/Autorenew';
+import Typography from '@material-ui/core/Typography';
 
 class QuoteGenerator extends React.Component {
     constructor(props) {
@@ -26,22 +29,31 @@ class QuoteGenerator extends React.Component {
     }
   
     render() {
-      return (
-        <section>
-          <blockquote id='text'>{this.state.myApiData.quote}
-          </blockquote>
-          <div id='author-area'>
-            <cite id='author'>- {this.state.myApiData.author}
-            </cite>
-          </div>
-          <div></div>
-          <div id='button-area'>
-          <a id='tweet-quote' href={`https://twitter.com/intent/tweet?text=` + `"` + encodeURIComponent(this.state.myApiData.quote) + `" -` + this.state.myApiData.author}target='_blank'>Tweet Quote</a>
-          <Button variant="contained" color="primary" label="New Quote" id='new-quote' onClick={this.buttonClicked.bind(this)}>New Quote</Button>
-          </div>
-        </section>
-      );
+        return (
+            <section>
+                <div>
+                    <Typography variant="h4" id='text'>{this.state.myApiData.quote}
+                    </Typography>
+                    <Typography variant="h6" id='author-area'>
+                        <cite id='author'>- {this.state.myApiData.author}
+                        </cite>
+                    </Typography>
+                </div>
+                <div>
+                    <Button variant="contained"
+                        color="primary"
+                        href={`https://twitter.com/intent/tweet?text="` + encodeURIComponent(this.state.myApiData.quote) + `" -` + this.state.myApiData.author}>
+                        Tweet
+                        <ShareIcon />
+                    </Button>
+                    <Button variant="contained" color="primary" label="New Quote" id='new-quote' onClick={this.buttonClicked.bind(this)}>
+                        New Quote
+                    <AutorenewIcon />
+                    </Button>
+                </div>
+            </section>
+        );
     }
-  }
+}
 
   export default QuoteGenerator;
