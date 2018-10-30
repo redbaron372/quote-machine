@@ -30,7 +30,7 @@ class QuoteGenerator extends React.Component {
   
     render() {
         return (
-            <section>
+            <section id="quote-box">
                 <div>
                     <Typography variant="h4" id='text'>{this.state.myApiData.quote}
                     </Typography>
@@ -39,10 +39,11 @@ class QuoteGenerator extends React.Component {
                         </cite>
                     </Typography>
                 </div>
-                <div>
+                <div id="button-area">
                     <Button variant="contained"
                         color="primary"
-                        href={`https://twitter.com/intent/tweet?text="` + encodeURIComponent(this.state.myApiData.quote) + `" -` + this.state.myApiData.author}>
+                        href={`https://twitter.com/intent/tweet?text="` + encodeURIComponent(this.state.myApiData.quote) + `" -` + this.state.myApiData.author}
+                        target="_blank">
                         Tweet
                         <ShareIcon />
                     </Button>
