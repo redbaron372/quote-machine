@@ -1,11 +1,27 @@
+html {
+  height: 100%;
+}
+
 body {
   background-color: #282c34;
+  height: 100%;
+}
+
+#root {
+  height: 100%;
+}
+
+.contentArea {
+  min-height: 100%;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
 }
 
 #quote-box {
   margin-top: 10vh;
   margin-left: auto;
   margin-right: auto;
+  min-width: 75%;
   max-width: 75%;
   background-color: #FFFFFF;
   padding: 25px;
@@ -23,4 +39,10 @@ body {
 
 #new-quote {
   float: right;
+}
+
+#footer {
+  text-align: center;
+  background-color: #FFFFFF;
+  padding: 20px;
 }

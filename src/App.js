@@ -3,7 +3,8 @@ import './App.css';
 import QuoteGenerator from './quoteGenerator';
 
 const App = () => (
-    <QuoteGenerator />
+        <QuoteGenerator />
+
 );
 
 export default App;
