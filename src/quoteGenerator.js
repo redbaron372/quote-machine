@@ -11,7 +11,7 @@ class QuoteGenerator extends React.Component {
   
       this.state = {
         myApiData: [],
-        apiURL: "https://talaikis.com/api/quotes/random/"
+        apiURL: "https://api.forismatic.com/api/1.0/?method=getQuote&key=372&format=json&lang=en"
       };
   
       this.buttonClicked = this.buttonClicked.bind(this);
@@ -34,10 +34,10 @@ class QuoteGenerator extends React.Component {
             <section className="contentArea" id="content">
                 <div id="quote-box">
                     <div>
-                        <Typography variant="h4" id='text'>{this.state.myApiData.quote}
+                        <Typography variant="h4" id='text'>{this.state.myApiData.quoteText}
                         </Typography>
                         <Typography variant="h6" id='author-area'>
-                            <cite id='author'>- {this.state.myApiData.author}
+                            <cite id='author'>- {this.state.myApiData.quoteAuthor}
                             </cite>
                         </Typography>
                     </div>
